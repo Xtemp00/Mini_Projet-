@@ -72,6 +72,87 @@ public class Bataillenavale {
 		b1.OrientationP = Clavier.saisirString();
 		return b1;
 	}
+	static void plateaux(BJoueur b1){
+		String colonne="";
+		for(int i=0;i<10;i++){
+			switch(i){
+				case 0:{
+					colonne="A";
+					break;
+				}
+				case 1:{
+					colonne="B";
+					break;
+				}
+				case 2:{
+					colonne="C";
+					break;
+				}
+				case 3:{
+					colonne="D";
+					break;
+				}
+				case 4:{
+					colonne="E";
+					break;
+				}
+				case 5:{
+					colonne="F";
+					break;
+				}
+				case 6:{
+					colonne="G";
+					break;
+				}
+				case 7:{
+					colonne="H";
+					break;
+				}
+				case 8:{
+					colonne="I";
+					break;
+				}
+				case 9:{
+					colonne="J";
+					break;
+				}
+			}
+			
+			for(int k=0;k<10;k++){
+				Ecran.afficher("   tl :", b1.Torpilleurl, " c :  " ,colonne, " tc :  ",b1.Torpilleurc, " k :  ",k);
+				
+				Ecran.afficherln("b1.Torpilleurl==colonne", b1.Torpilleurl==colonne);
+				Ecran.afficherln("b1.Torpilleurc==k",b1.Torpilleurc==k);
+				if (b1.Torpilleurl==colonne) {
+						Ecran.afficherln("ICIIIIIII ");
+					
+					if (b1.Torpilleurc==k) {
+						Ecran.afficher("X ");
+					}
+				} if (b1.Sousm1l==colonne) {
+					if (b1.Sousm1c==k){
+						Ecran.afficher("X ");
+					}
+				} if (b1.Sousm2l==colonne) {
+					if (b1.Sousm2c==k){
+						Ecran.afficher("X ");
+					}
+				} if (b1.Croiseurl==colonne) {
+					if (b1.Croiseurc==k){
+						Ecran.afficher("X ");
+					}
+				} if (b1.Porteavl==colonne) {
+					if (b1.Porteavc==k){
+						Ecran.afficher("X ");
+					}
+				} else {
+					Ecran.afficher("O ");
+				}
+			}
+			Ecran.afficher("\n");
+		}
+		
+	}
 	public static void main (String args[]) {
 		BJoueur b1 = new BJoueur();
 		Presentation();
@@ -80,5 +161,6 @@ public class Bataillenavale {
 		b1 = SaisirS2J(b1);
 		b1 = SaisirCJ(b1);
 		b1 = SaisirPJ(b1);
+		plateaux(b1);
 	}
 }
