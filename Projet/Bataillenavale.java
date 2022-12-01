@@ -7,32 +7,48 @@ public class Bataillenavale {
 		Porteavion Porteav;
 	}
 	static class Torpilleur {
-		int Torpilleurc1
-		int Torpilleurc2
-		String Torpilleurl1
-		String Torpilleurl2
+		int Torpilleurl1;
+		int Torpilleurl2;
+		String Torpilleurc1;
+		String Torpilleurc1;
 	}
 	static class Sousmarin1 {
-		int Sousmarin1c1
-		int Sousmarin1c2
-		int Sousmarin1c3
-		String Sousmarin1l1
-		String Sousmarin1l2
-		String Sousmarin1l3
+		int Sousmarin1l1;
+		int Sousmarin1l2;
+		int Sousmarin1l3;
+		String Sousmarin1c1;
+		String Sousmarin1c2;
+		String Sousmarin1c3;
 	}
 	static class Sousmarin2 {
-		int Sousmarin2c1
-		int Sousmarin2c2
-		int Sousmarin2c3
-		String Sousmarin2l1
-		String Sousmarin2l2
-		String Sousmarin2l3
+		int Sousmarin2l1;
+		int Sousmarin2l2;
+		int Sousmarin2l3;
+		String Sousmarin2c1;
+		String Sousmarin2c2;
+		String Sousmarin2c3;
 	}
 	static class Croiseur {
-		
+		int Croiseurl1;
+		int Croiseurl2;
+		int Croiseurl3;
+		int Croiseurl4;
+		String Croiseur2c1;
+		String Croiseur2c2;
+		String Croiseur2c3;
+		String Croiseur2c4;
 	}
 	static class Porteavion {
-		
+		int Porteavionl1;
+		int Porteavionl2;
+		int Porteavionl3;
+		int Porteavionl4;
+		int Porteavionl5;
+		String Porteavionc1;
+		String Porteavionc2;
+		String Porteavionc3;
+		String Porteavionc4;
+		String Porteavionc5;
 	}
 	static void Presentation(){
 		Ecran.afficherln("||	Bienvenu dans la bataille navale	||");
@@ -46,262 +62,91 @@ public class Bataillenavale {
 	}
 	static BJoueur SaisirTJ(){
 		BJoueur b1 = new BJoueur();
-		Ecran.afficherln("Veuillez saisir la ligne de votre Torpilleur (il mesure deux cases)");
-		b1.Torpilleurl=Clavier.saisirString();
-		switch(b1.Torpilleurl){
-				case "A":{
-					b1.Torpilleurli=0;
-					break;
-				}
-				case "B":{
-					b1.Torpilleurli=1;
-					break;
-				}
-				case "C":{
-					b1.Torpilleurli=2;
-					break;
-				}
-				case "D":{
-					b1.Torpilleurli=3;
-					break;
-				}
-				case "E":{
-					b1.Torpilleurli=4;
-					break;
-				}
-				case "F":{
-					b1.Torpilleurli=5;
-					break;
-				}
-				case "G":{
-					b1.Torpilleurli=6;
-					break;
-				}
-				case "H":{
-					b1.Torpilleurli=7;
-					break;
-				}
-				case "I":{
-					b1.Torpilleurli=8;
-					break;
-				}
-				case "J":{
-					b1.Torpilleurli=9;
-					break;
-				}
-			}
-		Ecran.afficherln("Veuillez saisir la colonne de votre Torpilleur (il mesure deux cases)");
-		b1.Torpilleurc=Clavier.saisirInt();
-		Ecran.afficherln("Dans quel sens est-il orienter ?(orientation possible :\ngauche = d \ndroite = d\nhaut = h\nbas = b");
-		b1.OrientationT = Clavier.saisirString();
+		Ecran.afficherln("Veuillez saisir la premiere ligne de votre Torpilleur (il mesure deux cases)");
+		b1.Torpilleur.Torpilleurl1=Clavier.saisirInt();
+		Ecran.afficherln("Veuillez saisir la premiere colonne de votre Torpilleur (il mesure deux cases)");
+		b1.Torpilleur.Torpilleurc1=Clavier.saisirString();
+		Ecran.afficherln("Veuillez saisir la deuxieme ligne de votre Torpilleur (il mesure deux cases)");
+		b1.Torpilleur.Torpilleurl2=Clavier.saisirInt();
+		Ecran.afficherln("Veuillez saisir la deuxieme colonne de votre Torpilleur (il mesure deux cases)");
+		b1.Torpilleur.Torpilleurc2=Clavier.saisirString();
 		return b1;
 	}
 	static BJoueur SaisirS1J(BJoueur b1){
-		Ecran.afficherln("Veuillez saisir la ligne de votre Sous-marin numéro1 (il mesure trois cases)");
-		b1.Sousm1l=Clavier.saisirString();
-		switch(b1.Sousm1l){
-				case "A":{
-					b1.Sousm1li=0;
-					break;
-				}
-				case "B":{
-					b1.Sousm1li=1;
-					break;
-				}
-				case "C":{
-					b1.Sousm1li=2;
-					break;
-				}
-				case "D":{
-					b1.Sousm1li=3;
-					break;
-				}
-				case "E":{
-					b1.Sousm1li=4;
-					break;
-				}
-				case "F":{
-					b1.Sousm1li=5;
-					break;
-				}
-				case "G":{
-					b1.Sousm1li=6;
-					break;
-				}
-				case "H":{
-					b1.Sousm1li=7;
-					break;
-				}
-				case "I":{
-					b1.Sousm1li=8;
-					break;
-				}
-				case "J":{
-					b1.Sousm1li=9;
-					break;
-				}
-			}
-		Ecran.afficherln("Veuillez saisir la colonne de votre Sous-marin numéro1 (il mesure trois cases)");
-		b1.Sousm1c=Clavier.saisirInt();
-		Ecran.afficherln("Dans quel sens est-il orienter ?(orientation possible :\ngauche = d \ndroite = d\nhaut = h\nbas = b");
-		b1.OrientationS1 = Clavier.saisirString();
+		Ecran.afficherln("Veuillez saisir la premiere ligne de votre Sous-marin numéro1 (il mesure trois cases)");
+		b1.Sousm1.Sousmarin1l1=Clavier.saisirInt();
+		Ecran.afficherln("Veuillez saisir la premiere colonne de votre Sous-marin numéro1 (il mesure trois cases)");
+		b1.Sousm1.Sousmarin1c1=Clavier.saisirString();
+		Ecran.afficherln("Veuillez saisir la deuxieme ligne de votre Sous-marin numéro1 (il mesure trois cases)");
+		b1.Sousm1.Sousmarin1l2=Clavier.saisirInt();
+		Ecran.afficherln("Veuillez saisir la deuxieme colonne de votre Sous-marin numéro1 (il mesure trois cases)");
+		b1.Sousm1.Sousmarin1c2=Clavier.saisirString();
+		Ecran.afficherln("Veuillez saisir la troisieme ligne de votre Sous-marin numéro1 (il mesure trois cases)");
+		b1.Sousm1.Sousmarin1l3=Clavier.saisirInt();
+		Ecran.afficherln("Veuillez saisir la troisieme colonne de votre Sous-marin numéro1 (il mesure trois cases)");
+		b1.Sousm1.Sousmarin1c3=Clavier.saisirString();
 		return b1;
 	}
 	static BJoueur SaisirS2J(BJoueur b1){
-		Ecran.afficherln("Veuillez saisir la ligne de votre Sous-marin numéro2 (il mesure trois cases)");
-		b1.Sousm2l=Clavier.saisirString();
-		switch(b1.Sousm2l){
-				case "A":{
-					b1.Sousm2li=0;
-					break;
-				}
-				case "B":{
-					b1.Sousm2li=1;
-					break;
-				}
-				case "C":{
-					b1.Sousm2li=2;
-					break;
-				}
-				case "D":{
-					b1.Sousm2li=3;
-					break;
-				}
-				case "E":{
-					b1.Sousm2li=4;
-					break;
-				}
-				case "F":{
-					b1.Sousm2li=5;
-					break;
-				}
-				case "G":{
-					b1.Sousm2li=6;
-					break;
-				}
-				case "H":{
-					b1.Sousm2li=7;
-					break;
-				}
-				case "I":{
-					b1.Sousm2li=8;
-					break;
-				}
-				case "J":{
-					b1.Sousm2li=9;
-					break;
-				}
-			}
-		Ecran.afficherln("Veuillez saisir la colonne de votre Sous-marin numéro2 (il mesure trois cases)");
-		b1.Sousm2c=Clavier.saisirInt();
-		Ecran.afficherln("Dans quel sens est-il orienter ?(orientation possible :\ngauche = d \ndroite = d\nhaut = h\nbas = b");
-		b1.OrientationS2 = Clavier.saisirString();
+		Ecran.afficherln("Veuillez saisir la premiere ligne de votre Sous-marin numéro1 (il mesure trois cases)");
+		b1.Sousm2.Sousmarin2l1=Clavier.saisirInt();
+		Ecran.afficherln("Veuillez saisir la premiere colonne de votre Sous-marin numéro1 (il mesure trois cases)");
+		b1.Sousm2.Sousmarin2c1=Clavier.saisirString();
+		Ecran.afficherln("Veuillez saisir la deuxieme ligne de votre Sous-marin numéro1 (il mesure trois cases)");
+		b1.Sousm2.Sousmarin2l2=Clavier.saisirInt();
+		Ecran.afficherln("Veuillez saisir la deuxieme colonne de votre Sous-marin numéro1 (il mesure trois cases)");
+		b1.Sousm2.Sousmarin2c2=Clavier.saisirString();
+		Ecran.afficherln("Veuillez saisir la troisieme ligne de votre Sous-marin numéro1 (il mesure trois cases)");
+		b1.Sousm2.Sousmarin2l3=Clavier.saisirInt();
+		Ecran.afficherln("Veuillez saisir la troisieme colonne de votre Sous-marin numéro1 (il mesure trois cases)");
+		b1.Sousm2.Sousmarin2c3=Clavier.saisirString();
 		return b1;
 	}
 	static BJoueur SaisirCJ(BJoueur b1){
-		Ecran.afficherln("Veuillez saisir la ligne de votre Croiseur (il mesure quatre cases)");
-		b1.Croiseurl=Clavier.saisirString();
-		switch(b1.Croiseurl){
-				case "A":{
-					b1.Croiseurli=0;
-					break;
-				}
-				case "B":{
-					b1.Croiseurli=1;
-					break;
-				}
-				case "C":{
-					b1.Croiseurli=2;
-					break;
-				}
-				case "D":{
-					b1.Croiseurli=3;
-					break;
-				}
-				case "E":{
-					b1.Croiseurli=4;
-					break;
-				}
-				case "F":{
-					b1.Croiseurli=5;
-					break;
-				}
-				case "G":{
-					b1.Croiseurli=6;
-					break;
-				}
-				case "H":{
-					b1.Croiseurli=7;
-					break;
-				}
-				case "I":{
-					b1.Croiseurli=8;
-					break;
-				}
-				case "J":{
-					b1.Croiseurli=9;
-					break;
-				}
-			}
-		Ecran.afficherln("Veuillez saisir la colonne de votre Croiseur (il mesure quatre cases)");
-		b1.Croiseurc=Clavier.saisirInt();
-		Ecran.afficherln("Dans quel sens est-il orienter ?(orientation possible :\ngauche = d \ndroite = d\nhaut = h\nbas = b");
-		b1.OrientationC = Clavier.saisirString();
+		Ecran.afficherln("Veuillez saisir la premiere ligne de votre Croiseur (il mesure quatre cases)");
+		b1.Croiseur.Croiseurl1=Clavier.saisirInt();
+		Ecran.afficherln("Veuillez saisir la premiere colonne de votre Croiseur (il mesure quatre cases)");
+		b1.Croiseur.Croiseurc1=Clavier.saisirString();
+		Ecran.afficherln("Veuillez saisir la deuxieme ligne de votre Croiseur (il mesure quatre cases)");
+		b1.Croiseur.Croiseurl2=Clavier.saisirInt();
+		Ecran.afficherln("Veuillez saisir la deuxieme colonne de votre Croiseur (il mesure quatre cases)");
+		b1.Croiseur.Croiseurc2=Clavier.saisirString();
+		Ecran.afficherln("Veuillez saisir la troisieme ligne de votre Croiseur (il mesure quatre cases)");
+		b1.Croiseur.Croiseurl3=Clavier.saisirInt();
+		Ecran.afficherln("Veuillez saisir la troisieme colonne de votre Croiseur (il mesure quatre cases)");
+		b1.Croiseur.Croiseurc3=Clavier.saisirString();
+		Ecran.afficherln("Veuillez saisir la quatrieme ligne de votre Croiseur (il mesure quatre cases)");
+		b1.Croiseur.Croiseurl4=Clavier.saisirInt();
+		Ecran.afficherln("Veuillez saisir la quatrieme colonne de votre Croiseur (il mesure quatre cases)");
+		b1.Croiseur.Croiseurc4=Clavier.saisirString();
 		return b1;
 	}
 	static BJoueur SaisirPJ(BJoueur b1){
-		Ecran.afficherln("Veuillez saisir la ligne de votre Porte avion (il mesure cinq cases)");
-		b1.Porteavl=Clavier.saisirString();
-		switch(b1.Porteavl){
-				case "A":{
-					b1.Porteavli=0;
-					break;
-				}
-				case "B":{
-					b1.Porteavli=1;
-					break;
-				}
-				case "C":{
-					b1.Porteavli=2;
-					break;
-				}
-				case "D":{
-					b1.Porteavli=3;
-					break;
-				}
-				case "E":{
-					b1.Porteavli=4;
-					break;
-				}
-				case "F":{
-					b1.Porteavli=5;
-					break;
-				}
-				case "G":{
-					b1.Porteavli=6;
-					break;
-				}
-				case "H":{
-					b1.Porteavli=7;
-					break;
-				}
-				case "I":{
-					b1.Porteavli=8;
-					break;
-				}
-				case "J":{
-					b1.Porteavli=9;
-					break;
-				}
-			}
-		Ecran.afficherln("Veuillez saisir la colonne de votre Porte avion (il mesure cinq cases)");
-		b1.Porteavc=Clavier.saisirInt();
-		Ecran.afficherln("Dans quel sens est-il orienter ?(orientation possible :\ngauche = d \ndroite = d\nhaut = h\nbas = b");
-		b1.OrientationP = Clavier.saisirString();
+		Ecran.afficherln("Veuillez saisir la premiere ligne de votre Porte avion (il mesure cinq cases)");
+		b1.Porteavion.Porteavionl1=Clavier.saisirInt();
+		Ecran.afficherln("Veuillez saisir la premiere colonne de votre Porte avion (il mesure cinq cases)");
+		b1.Porteavion.Porteavionc1=Clavier.saisirString();
+		Ecran.afficherln("Veuillez saisir la deuxieme ligne de votre Porte avion (il mesure cinq cases)");
+		b1.Porteavion.Porteavionl2=Clavier.saisirInt();
+		Ecran.afficherln("Veuillez saisir la deuxieme colonne de votre Porte avion (il mesure cinq cases)");
+		b1.Porteavion.Porteavionc2=Clavier.saisirString();
+		Ecran.afficherln("Veuillez saisir la troisieme ligne de votre Porte avion (il mesure cinq cases)");
+		b1.Porteavion.Porteavionl3=Clavier.saisirInt();
+		Ecran.afficherln("Veuillez saisir la troisieme colonne de votre Porte avion (il mesure cinq cases)");
+		b1.Porteavion.Porteavionc3=Clavier.saisirString();
+		Ecran.afficherln("Veuillez saisir la quatrieme ligne de votre Porte avion (il mesure cinq cases)");
+		b1.Porteavion.Porteavionl4=Clavier.saisirInt();
+		Ecran.afficherln("Veuillez saisir la quatrieme colonne de votre Porte avion (il mesure cinq cases)");
+		b1.Porteavion.Porteavionc4=Clavier.saisirString();
+		Ecran.afficherln("Veuillez saisir la cinquieme ligne de votre Porte avion (il mesure cinq cases)");
+		b1.Porteavion.Porteavionl5=Clavier.saisirInt();
+		Ecran.afficherln("Veuillez saisir la cinquieme colonne de votre Porte avion (il mesure cinq cases)");
+		b1.Porteavion.Porteavionc5=Clavier.saisirString();
 		return b1;
 	}
 	static BJoueur transfrom(BJoueur b1){
-		int 
+		int valeur;
+	}
 	static void plateaux(BJoueur b1){
 		int colonne=0;
 		boolean pasvide = true ;
