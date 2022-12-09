@@ -1,31 +1,31 @@
-public class Bataillenavale {
-	static class BJoueur {
-		Torpilleur Torpilleur;
-		Sousmarin1 Sousm1;
-		Sousmarin2 Sousm2;
-		Croiseur Croiseur;
-		Porteavion Porteav;
-	}
+// Rondo Benjamin Groupe de TD I
+
+public class Rondo {
+	//classe Torpilleur qui prend en compte les cases du bateau
 	static class Torpilleur {
 		int Torpilleur1;
 		int Torpilleur2;
 	}
+	//classe Sousmarin1 qui prend en compte les cases du bateau
 	static class Sousmarin1 {
 		int Sousmarin11;
 		int Sousmarin12;
 		int Sousmarin13;
 	}
+	//classe Sousmarin2 qui prend en compte les cases du bateau
 	static class Sousmarin2 {
 		int Sousmarin21;
 		int Sousmarin22;
 		int Sousmarin23;
 	}
+	//classe Croiseur qui prend en compte les cases du bateau
 	static class Croiseur {
 		int Croiseur1;
 		int Croiseur2;
 		int Croiseur3;
 		int Croiseur4;
 	}
+	//classe Porteavion qui prend en compte les cases du bateau
 	static class Porteavion {
 		int Porteavion1;
 		int Porteavion2;
@@ -33,6 +33,8 @@ public class Bataillenavale {
 		int Porteavion4;
 		int Porteavion5;
 	}
+	//effet : présente l'affichage des règles
+	//sortie : affichage
 	static void Presentation(){
 		Ecran.afficherln("||	Bienvenu dans la bataille navale	||");
 		Ecran.afficher("\n");
@@ -43,6 +45,8 @@ public class Bataillenavale {
 		Ecran.afficherln("***		Le jeu se termine quand l'un des joueurs perd entierement ses bateaux, le vainqueur est alors celui a qui il reste encore des bateaux		***");
 		Ecran.afficherln("\n");
 	}
+	//effet: fonction qui permet de saisir le bateau torpilleur
+	// sortie : torpilleur
 	static Torpilleur SaisirTJ(){
 		char colonne;
 		int colonne2;
@@ -94,6 +98,8 @@ public class Bataillenavale {
 		}
 		return b1;
 	}
+	// effet : fonction qui permet de saisir le premier sousmarin
+	//sortie : sousmarin1
 	static Sousmarin1 SaisirS1J(){
 		char colonne;
 		int colonne2;
@@ -167,6 +173,8 @@ public class Bataillenavale {
 		}
 		return b1;
 	}
+	// effet : fonction qui permet de saisir le deuxieme sousmarin
+	//sortie : sousmarin2
 	static Sousmarin2 SaisirS2J(){
 		char colonne;
 		int colonne2;
@@ -240,6 +248,8 @@ public class Bataillenavale {
 		}
 		return b1;
 	}
+	// effet : fonction qui permet de saisir le croiseur
+	//sortie : croiseur
 	static Croiseur SaisirCJ(){
 		char colonne;
 		int colonne2;
@@ -327,6 +337,8 @@ public class Bataillenavale {
 		}
 		return b1;
 	}
+	// effet : fonction qui permet de saisir le porte avion
+	//sortie : porte avion
 	static Porteavion SaisirPJ(){
 		char colonne;
 		int colonne2;
@@ -431,6 +443,9 @@ public class Bataillenavale {
 		}
 		return b1;
 	}
+	//effet : fonction qui permet de transformer la caractere de la case en entier
+	//entrée : caractere C
+	//sortie : entier trans
 	static int Transform(char C){
 		int trans = 0;
 		int C2;
@@ -469,7 +484,8 @@ public class Bataillenavale {
 		}
 		return trans;
 	}
-	
+	//effet : fonction qui permet l'affichage du plateaux de jeu
+	//sortie : affichage
 	static void plateaux(Torpilleur torp,Sousmarin1 sousm1,Sousmarin2 sousm2,Croiseur croiseur,Porteavion porteav){
 		int colonne=0;
 		boolean pasvide = true ;
@@ -529,6 +545,8 @@ public class Bataillenavale {
 			Ecran.afficherln("");
 		}
 	}
+	//effet : fonction qui permet la saisie du torpilleur par le robot
+	//sortie torpilleur
 	static Torpilleur hasardT (){
 		double hasard;
 		int hasard2;
@@ -545,6 +563,8 @@ public class Bataillenavale {
 		}
 		return bot;
 	}
+	//effet : fonction qui permet la saisie du premeir sousmarin par le robot
+	//sortie sousmarin1
 	static Sousmarin1 hasardSm1 (){
 		double hasard,hasard3;
 		int hasard2,hasard4;
@@ -563,6 +583,8 @@ public class Bataillenavale {
 		}
 		return bot;
 	}
+	//effet : fonction qui permet la saisie du deuxieme sousmarin par le robot
+	//sortie sousmarin2
 	static Sousmarin2 hasardSm2 (Sousmarin1 bot1){
 		double hasard,hasard3;
 		int hasard2,hasard4;
@@ -587,6 +609,8 @@ public class Bataillenavale {
 		}
 		return bot;
 	}
+	//effet : fonction qui permet la saisie du croiseur par le robot
+	//sortie croiseur
 	static Croiseur hasardC (Sousmarin1 bot1,Sousmarin2 bot2){
 		double hasard,hasard3;
 		int hasard2,hasard4;
@@ -614,6 +638,8 @@ public class Bataillenavale {
 		}
 		return bot;
 	}
+	//effet : fonction qui permet la saisie du porte avion par le robot
+	//sortie porteavion
 	static Porteavion hasardP (Sousmarin1 bot1,Sousmarin2 bot2,Croiseur bot3){
 		double hasard,hasard3;
 		int hasard2,hasard4;
@@ -642,6 +668,9 @@ public class Bataillenavale {
 		}
 		return bot;
 	}
+	//effet : fonction qui permet de trouver si un bateau a été toucher
+	//entrée bcase torpilleur sousmarin1 sousmarin2 croiseur et porteavion
+	//sortie counter
 	static int EstToucher(int bcase, Torpilleur torp,Sousmarin1 sousm1,Sousmarin2 sousm2, Croiseur croiseur,Porteavion porteav){
 		int counter=0;
 		if (bcase==torp.Torpilleur1){
@@ -715,6 +744,7 @@ public class Bataillenavale {
 		}
 		return counter;
 	}
+	//effet : fonction principal qui permet le fonctionnement du jeu en demandant le nombre de manche, le choix du jeu et enfin le jeu en lui meme
 	public static void main (String args[]) {
 		int bcase;
 		double bcased;
