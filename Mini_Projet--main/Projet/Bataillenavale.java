@@ -50,33 +50,39 @@ public class Bataillenavale {
 		Torpilleur b1 = new Torpilleur();
 		Ecran.afficherln("Veuillez saisir la premiere ligne de votre Torpilleur (il mesure deux cases)");
 		b1.Torpilleur1 = Clavier.saisirInt();
+		while ((b1.Torpilleur1<0)||(b1.Torpilleur1>9)){
+			Ecran.afficher("Veuillez saisir une valeur correct");
+			b1.Torpilleur1 = Clavier.saisirInt();
+		}
 		Ecran.afficherln("Veuillez saisir la premiere colonne de votre Torpilleur (il mesure deux cases)");
 		colonne = Clavier.saisirChar();
+		while(((int)colonne<65)||((int)colonne>74)){
+			Ecran.afficher("Veuillez saisir une valeur correct");
+			colonne = Clavier.saisirChar();
+		}
 		colonne2 = Transform(colonne);
 		b1.Torpilleur1 = (b1.Torpilleur1*10)+colonne2;
-		verite=VerifT(b1);
-		while(verite){
-			Ecran.afficher("Erreur veuillez saisir une ligne");
-			b1.Torpilleur1=Clavier.saisirInt();
-			Ecran.afficherln("Veuillez saisir une colonne ");
-			colonne = Clavier.saisirChar();
-			colonne2 = Transform(colonne);
-			b1.Torpilleur1=(b1.Torpilleur1*10)+colonne2;
-		}
 		Ecran.afficherln("Veuillez saisir la deuxieme ligne de votre Torpilleur (il mesure deux cases)");
 		b1.Torpilleur2=Clavier.saisirInt();
+		while ((b1.Torpilleur2<0)||(b1.Torpilleur2>9)){
+			Ecran.afficher("Veuillez saisir une valeur correct");
+			b1.Torpilleur2= Clavier.saisirChar();
+		}
 		Ecran.afficherln("Veuillez saisir la deuxieme colonne de votre Torpilleur (il mesure deux cases)");
 		colonne=Clavier.saisirChar();
 		colonne2 = Transform(colonne);
 		b1.Torpilleur2 = (b1.Torpilleur2*10)+colonne2;
-		verite=VerifT(b1);
-		while(verite){
-			Ecran.afficher("Erreur veuillez saisir une ligne");
+		if ((b1.Torpilleur2!=b1.Torpilleur1+1)||(b1.Torpilleur2!=b1.Torpilleur1-1)||(b1.Torpilleur2!=b1.Torpilleur1+10)||(b1.Torpilleur2!=b1.Torpilleur1-10)){
+			Ecran.afficherln("Erreur veuillez de nouveau saisir la ligne");
 			b1.Torpilleur2=Clavier.saisirInt();
-			Ecran.afficherln("Veuillez saisir une colonne ");
-			colonne = Clavier.saisirChar();
+			while ((b1.Torpilleur2<0)||(b1.Torpilleur2>9)){
+				Ecran.afficher("Veuillez saisir une valeur correct");
+				b1.Torpilleur2= Clavier.saisirChar();
+			}
+			Ecran.afficherln("veuillez saisir de nouveau la colonne ");
+			colonne=Clavier.saisirChar();
 			colonne2 = Transform(colonne);
-			b1.Torpilleur2=(b1.Torpilleur2*10)+colonne2;
+			b1.Torpilleur2 = (b1.Torpilleur2*10)+colonne2;
 		}
 		return b1;
 	}
@@ -87,49 +93,46 @@ public class Bataillenavale {
 		Sousmarin1 b1 = new Sousmarin1();
 		Ecran.afficherln("Veuillez saisir la premiere ligne de votre Sous-marin numéro1 (il mesure trois cases)");
 		b1.Sousmarin11=Clavier.saisirInt();
+		while ((b1.Sousmarin11<0)||(b1.Sousmarin11>9)){
+			Ecran.afficher("Veuillez saisir une valeur correct");
+			b1.Sousmarin11 = Clavier.saisirInt();
+		}
 		Ecran.afficherln("Veuillez saisir la premiere colonne de votre Sous-marin numéro1 (il mesure trois cases)");
 		colonne = Clavier.saisirChar();
+		while(((int)colonne<65)||((int)colonne>74)){
+			Ecran.afficher("Veuillez saisir une valeur correct");
+			colonne = Clavier.saisirChar();
+		}
 		colonne2 = Transform(colonne);
 		b1.Sousmarin11= (b1.Sousmarin11*10)+colonne2;
-		verite=VerifSm1(b1);
-		while(verite){
-			Ecran.afficher("Erreur veuillez saisir une ligne");
-			b1.Sousmarin11=Clavier.saisirInt();
-			Ecran.afficherln("Veuillez saisir une colonne ");
-			colonne = Clavier.saisirChar();
-			colonne2 = Transform(colonne);
-			b1.Sousmarin11=(b1.Sousmarin11*10)+colonne2;
-		}
 		Ecran.afficherln("Veuillez saisir la deuxieme ligne de votre Sous-marin numéro1 (il mesure trois cases)");
 		b1.Sousmarin12=Clavier.saisirInt();
+		while ((b1.Sousmarin12<0)||(b1.Sousmarin12>9)){
+			Ecran.afficher("Veuillez saisir une valeur correct");
+			b1.Sousmarin12 = Clavier.saisirInt();
+		}
 		Ecran.afficherln("Veuillez saisir la deuxieme colonne de votre Sous-marin numéro1 (il mesure trois cases)");
 		colonne = Clavier.saisirChar();
+		while(((int)colonne<65)||((int)colonne>74)){
+			Ecran.afficher("Veuillez saisir une valeur correct");
+			colonne = Clavier.saisirChar();
+		}
 		colonne2 = Transform(colonne);
 		b1.Sousmarin12= (b1.Sousmarin12*10)+colonne2;
-		verite=VerifSm1(b1);
-		while(verite){
-			Ecran.afficher("Erreur veuillez saisir une ligne");
-			b1.Sousmarin12=Clavier.saisirInt();
-			Ecran.afficherln("Veuillez saisir une colonne ");
-			colonne = Clavier.saisirChar();
-			colonne2 = Transform(colonne);
-			b1.Sousmarin12=(b1.Sousmarin12*10)+colonne2;
-		}
 		Ecran.afficherln("Veuillez saisir la troisieme ligne de votre Sous-marin numéro1 (il mesure trois cases)");
 		b1.Sousmarin13=Clavier.saisirInt();
+		while ((b1.Sousmarin13<0)||(b1.Sousmarin13>9)){
+			Ecran.afficher("Veuillez saisir une valeur correct");
+			b1.Sousmarin13 = Clavier.saisirInt();
+		}
 		Ecran.afficherln("Veuillez saisir la troisieme colonne de votre Sous-marin numéro1 (il mesure trois cases)");
 		colonne = Clavier.saisirChar();
+		while(((int)colonne<65)||((int)colonne>74)){
+			Ecran.afficher("Veuillez saisir une valeur correct");
+			colonne = Clavier.saisirChar();
+		}
 		colonne2 = Transform(colonne);
 		b1.Sousmarin13= (b1.Sousmarin13*10)+colonne2;
-		verite=VerifSm1(b1);
-		while(verite){
-			Ecran.afficher("Erreur veuillez saisir une ligne");
-			b1.Sousmarin13=Clavier.saisirInt();
-			Ecran.afficherln("Veuillez saisir une colonne ");
-			colonne = Clavier.saisirChar();
-			colonne2 = Transform(colonne);
-			b1.Sousmarin13=(b1.Sousmarin13*10)+colonne2;
-		}
 		return b1;
 	}
 	static Sousmarin2 SaisirS2J(){
@@ -139,49 +142,46 @@ public class Bataillenavale {
 		Sousmarin2 b1 = new Sousmarin2();
 		Ecran.afficherln("Veuillez saisir la premiere ligne de votre Sous-marin numéro1 (il mesure trois cases)");
 		b1.Sousmarin21=Clavier.saisirInt();
+		while ((b1.Sousmarin21<0)||(b1.Sousmarin21>9)){
+			Ecran.afficher("Veuillez saisir une valeur correct");
+			b1.Sousmarin21 = Clavier.saisirInt();
+		}
 		Ecran.afficherln("Veuillez saisir la premiere colonne de votre Sous-marin numéro1 (il mesure trois cases)");
 		colonne = Clavier.saisirChar();
+		while(((int)colonne<65)||((int)colonne>74)){
+			Ecran.afficher("Veuillez saisir une valeur correct");
+			colonne = Clavier.saisirChar();
+		}
 		colonne2 = Transform(colonne);
 		b1.Sousmarin21= (b1.Sousmarin21*10)+colonne2;
-		verite=VerifSm2(b1);
-		while(verite){
-			Ecran.afficher("Erreur veuillez saisir une ligne");
-			b1.Sousmarin21=Clavier.saisirInt();
-			Ecran.afficherln("Veuillez saisir une colonne ");
-			colonne = Clavier.saisirChar();
-			colonne2 = Transform(colonne);
-			b1.Sousmarin21=(b1.Sousmarin21*10)+colonne2;
-		}
 		Ecran.afficherln("Veuillez saisir la deuxieme ligne de votre Sous-marin numéro1 (il mesure trois cases)");
 		b1.Sousmarin22=Clavier.saisirInt();
+		while ((b1.Sousmarin22<0)||(b1.Sousmarin22>9)){
+			Ecran.afficher("Veuillez saisir une valeur correct");
+			b1.Sousmarin22 = Clavier.saisirInt();
+		}
 		Ecran.afficherln("Veuillez saisir la deuxieme colonne de votre Sous-marin numéro1 (il mesure trois cases)");
 		colonne = Clavier.saisirChar();
+		while(((int)colonne<65)||((int)colonne>74)){
+			Ecran.afficher("Veuillez saisir une valeur correct");
+			colonne = Clavier.saisirChar();
+		}
 		colonne2 = Transform(colonne);
 		b1.Sousmarin22= (b1.Sousmarin22*10)+colonne2;
-		verite=VerifSm2(b1);
-		while(VerifSm2(b1)){
-			Ecran.afficher("Erreur veuillez saisir une ligne");
-			b1.Sousmarin22=Clavier.saisirInt();
-			Ecran.afficherln("Veuillez saisir une colonne ");
-			colonne = Clavier.saisirChar();
-			colonne2 = Transform(colonne);
-			b1.Sousmarin22=(b1.Sousmarin22*10)+colonne2;
-		}
 		Ecran.afficherln("Veuillez saisir la troisieme ligne de votre Sous-marin numéro1 (il mesure trois cases)");
 		b1.Sousmarin23=Clavier.saisirInt();
+		while ((b1.Sousmarin23<0)||(b1.Sousmarin23>9)){
+			Ecran.afficher("Veuillez saisir une valeur correct");
+			b1.Sousmarin23 = Clavier.saisirInt();
+		}
 		Ecran.afficherln("Veuillez saisir la troisieme colonne de votre Sous-marin numéro1 (il mesure trois cases)");
 		colonne = Clavier.saisirChar();
+		while(((int)colonne<65)||((int)colonne>74)){
+			Ecran.afficher("Veuillez saisir une valeur correct");
+			colonne = Clavier.saisirChar();
+		}
 		colonne2 = Transform(colonne);
 		b1.Sousmarin23= (b1.Sousmarin23*10)+colonne2;
-		verite=VerifSm2(b1);
-		while(verite){
-			Ecran.afficher("Erreur veuillez saisir une ligne");
-			b1.Sousmarin23=Clavier.saisirInt();
-			Ecran.afficherln("Veuillez saisir une colonne ");
-			colonne = Clavier.saisirChar();
-			colonne2 = Transform(colonne);
-			b1.Sousmarin23=(b1.Sousmarin23*10)+colonne2;
-		}
 		return b1;
 	}
 	static Croiseur SaisirCJ(){
@@ -191,64 +191,60 @@ public class Bataillenavale {
 		Croiseur b1 = new Croiseur();
 		Ecran.afficherln("Veuillez saisir la premiere ligne de votre Croiseur (il mesure quatre cases)");
 		b1.Croiseur1=Clavier.saisirInt();
+		while ((b1.Croiseur1<0)||(b1.Croiseur1>9)){
+			Ecran.afficher("Veuillez saisir une valeur correct");
+			b1.Croiseur1 = Clavier.saisirInt();
+		}
 		Ecran.afficherln("Veuillez saisir la premiere colonne de votre Croiseur (il mesure quatre cases)");
 		colonne = Clavier.saisirChar();
+		while(((int)colonne<65)||((int)colonne>74)){
+			Ecran.afficher("Veuillez saisir une valeur correct");
+			colonne = Clavier.saisirChar();
+		}
 		colonne2 = Transform(colonne);
 		b1.Croiseur1=(b1.Croiseur1*10)+colonne2;
-		verite=VerifC(b1);
-		while(verite){
-			Ecran.afficher("Erreur veuillez saisir une ligne");
-			b1.Croiseur1=Clavier.saisirInt();
-			Ecran.afficherln("Veuillez saisir une colonne ");
-			colonne = Clavier.saisirChar();
-			colonne2 = Transform(colonne);
-			b1.Croiseur1=(b1.Croiseur1*10)+colonne2;
-		}
 		Ecran.afficherln("Veuillez saisir la deuxieme ligne de votre Croiseur (il mesure quatre cases)");
 		b1.Croiseur2=Clavier.saisirInt();
+		while ((b1.Croiseur2<0)||(b1.Croiseur2>9)){
+			Ecran.afficher("Veuillez saisir une valeur correct");
+			b1.Croiseur2 = Clavier.saisirInt();
+		}
 		Ecran.afficherln("Veuillez saisir la deuxieme colonne de votre Croiseur (il mesure quatre cases)");
 		colonne = Clavier.saisirChar();
+		while(((int)colonne<65)||((int)colonne>74)){
+			Ecran.afficher("Veuillez saisir une valeur correct");
+			colonne = Clavier.saisirChar();
+		}
 		colonne2 = Transform(colonne);
 		b1.Croiseur2=(b1.Croiseur2*10)+colonne2;
-		verite=VerifC(b1);
-		while(verite){
-			Ecran.afficher("Erreur veuillez saisir une ligne");
-			b1.Croiseur2=Clavier.saisirInt();
-			Ecran.afficherln("Veuillez saisir une colonne ");
-			colonne = Clavier.saisirChar();
-			colonne2 = Transform(colonne);
-			b1.Croiseur2=(b1.Croiseur2*10)+colonne2;
-		}
 		Ecran.afficherln("Veuillez saisir la troisieme ligne de votre Croiseur (il mesure quatre cases)");
 		b1.Croiseur3=Clavier.saisirInt();
+		while ((b1.Croiseur3<0)||(b1.Croiseur3>9)){
+			Ecran.afficher("Veuillez saisir une valeur correct");
+			b1.Croiseur3 = Clavier.saisirInt();
+		}
 		Ecran.afficherln("Veuillez saisir la troisieme colonne de votre Croiseur (il mesure quatre cases)");
 		colonne = Clavier.saisirChar();
+		while(((int)colonne<65)||((int)colonne>74)){
+			Ecran.afficher("Veuillez saisir une valeur correct");
+			colonne = Clavier.saisirChar();
+		}
 		colonne2 = Transform(colonne);
 		b1.Croiseur3=(b1.Croiseur3*10)+colonne2;
-		verite=VerifC(b1);
-		while(verite){
-			Ecran.afficher("Erreur veuillez saisir une ligne");
-			b1.Croiseur3=Clavier.saisirInt();
-			Ecran.afficherln("Veuillez saisir une colonne ");
-			colonne = Clavier.saisirChar();
-			colonne2 = Transform(colonne);
-			b1.Croiseur3=(b1.Croiseur3*10)+colonne2;
-		}
 		Ecran.afficherln("Veuillez saisir la quatrieme ligne de votre Croiseur (il mesure quatre cases)");
 		b1.Croiseur4=Clavier.saisirInt();
+		while ((b1.Croiseur4<0)||(b1.Croiseur4>9)){
+			Ecran.afficher("Veuillez saisir une valeur correct");
+			b1.Croiseur4 = Clavier.saisirInt();
+		}
 		Ecran.afficherln("Veuillez saisir la quatrieme colonne de votre Croiseur (il mesure quatre cases)");
 		colonne = Clavier.saisirChar();
+		while(((int)colonne<65)||((int)colonne>74)){
+			Ecran.afficher("Veuillez saisir une valeur correct");
+			colonne = Clavier.saisirChar();
+		}
 		colonne2 = Transform(colonne);
 		b1.Croiseur4=(b1.Croiseur4*10)+colonne2;
-		verite=VerifC(b1);
-		while(verite){
-			Ecran.afficher("Erreur veuillez saisir une ligne");
-			b1.Croiseur4=Clavier.saisirInt();
-			Ecran.afficherln("Veuillez saisir une colonne ");
-			colonne = Clavier.saisirChar();
-			colonne2 = Transform(colonne);
-			b1.Croiseur4=(b1.Croiseur4*10)+colonne2;
-		}
 		return b1;
 	}
 	static Porteavion SaisirPJ(){
@@ -258,79 +254,75 @@ public class Bataillenavale {
 		Porteavion b1 = new Porteavion();
 		Ecran.afficherln("Veuillez saisir la premiere ligne de votre Porte avion (il mesure cinq cases)");
 		b1.Porteavion1=Clavier.saisirInt();
+		while ((b1.Porteavion1<0)||(b1.Porteavion1>9)){
+			Ecran.afficher("Veuillez saisir une valeur correct");
+			b1.Porteavion1 = Clavier.saisirInt();
+		}
 		Ecran.afficherln("Veuillez saisir la premiere colonne de votre Porte avion (il mesure cinq cases)");
 		colonne = Clavier.saisirChar();
+		while(((int)colonne<65)||((int)colonne>74)){
+			Ecran.afficher("Veuillez saisir une valeur correct");
+			colonne = Clavier.saisirChar();
+		}
 		colonne2 = Transform(colonne);
 		b1.Porteavion1=(b1.Porteavion1*10)+colonne2;
-		verite=VerifP(b1);
-		while(verite){
-			Ecran.afficher("Erreur veuillez saisir une ligne");
-			b1.Porteavion1=Clavier.saisirInt();
-			Ecran.afficherln("Veuillez saisir une colonne ");
-			colonne = Clavier.saisirChar();
-			colonne2 = Transform(colonne);
-			b1.Porteavion1=(b1.Porteavion1*10)+colonne2;
-		}
 		Ecran.afficherln("Veuillez saisir la deuxieme ligne de votre Porte avion (il mesure cinq cases)");
 		b1.Porteavion2=Clavier.saisirInt();
+		while ((b1.Porteavion2<0)||(b1.Porteavion2>9)){
+			Ecran.afficher("Veuillez saisir une valeur correct");
+			b1.Porteavion2 = Clavier.saisirInt();
+		}
 		Ecran.afficherln("Veuillez saisir la deuxieme colonne de votre Porte avion (il mesure cinq cases)");
 		colonne = Clavier.saisirChar();
+		while(((int)colonne<65)||((int)colonne>74)){
+			Ecran.afficher("Veuillez saisir une valeur correct");
+			colonne = Clavier.saisirChar();
+		}
 		colonne2 = Transform(colonne);
 		b1.Porteavion2=(b1.Porteavion2*10)+colonne2;
-		verite=VerifP(b1);
-		while(verite){
-			Ecran.afficher("Erreur veuillez saisir une ligne");
-			b1.Porteavion2=Clavier.saisirInt();
-			Ecran.afficherln("Veuillez saisir une colonne ");
-			colonne = Clavier.saisirChar();
-			colonne2 = Transform(colonne);
-			b1.Porteavion2=(b1.Porteavion2*10)+colonne2;
-		}
 		Ecran.afficherln("Veuillez saisir la troisieme ligne de votre Porte avion (il mesure cinq cases)");
 		b1.Porteavion3=Clavier.saisirInt();
+		while ((b1.Porteavion3<0)||(b1.Porteavion3>9)){
+			Ecran.afficher("Veuillez saisir une valeur correct");
+			b1.Porteavion3 = Clavier.saisirInt();
+		}
 		Ecran.afficherln("Veuillez saisir la troisieme colonne de votre Porte avion (il mesure cinq cases)");
 		colonne = Clavier.saisirChar();
+		while(((int)colonne<65)||((int)colonne>74)){
+			Ecran.afficher("Veuillez saisir une valeur correct");
+			colonne = Clavier.saisirChar();
+		}
 		colonne2 = Transform(colonne);
 		b1.Porteavion3=(b1.Porteavion3*10)+colonne2;
-		verite=VerifP(b1);
-		while(verite){
-			Ecran.afficher("Erreur veuillez saisir une ligne");
-			b1.Porteavion2=Clavier.saisirInt();
-			Ecran.afficherln("Veuillez saisir une colonne ");
-			colonne = Clavier.saisirChar();
-			colonne2 = Transform(colonne);
-			b1.Porteavion2=(b1.Porteavion2*10)+colonne2;
-		}
 		Ecran.afficherln("Veuillez saisir la quatrieme ligne de votre Porte avion (il mesure cinq cases)");
 		b1.Porteavion4=Clavier.saisirInt();
+		while ((b1.Porteavion4<0)||(b1.Porteavion4>9)){
+			Ecran.afficher("Veuillez saisir une valeur correct");
+			b1.Porteavion4 = Clavier.saisirInt();
+		}
 		Ecran.afficherln("Veuillez saisir la quatrieme colonne de votre Porte avion (il mesure cinq cases)");
 		colonne = Clavier.saisirChar();
+		while(((int)colonne<65)||((int)colonne>74)){
+			Ecran.afficher("Veuillez saisir une valeur correct");
+			colonne = Clavier.saisirChar();
+		}
 		colonne2 = Transform(colonne);
 		b1.Porteavion4=(b1.Porteavion4*10)+colonne2;
-		verite=VerifP(b1);
-		while(verite){
-			Ecran.afficher("Erreur veuillez saisir une ligne");
-			b1.Porteavion3=Clavier.saisirInt();
-			Ecran.afficherln("Veuillez saisir une colonne ");
-			colonne = Clavier.saisirChar();
-			colonne2 = Transform(colonne);
-			b1.Porteavion3=(b1.Porteavion3*10)+colonne2;
-		}
 		Ecran.afficherln("Veuillez saisir la cinquieme ligne de votre Porte avion (il mesure cinq cases)");
 		b1.Porteavion5=Clavier.saisirInt();
+		while ((b1.Porteavion5<0)||(b1.Porteavion5>9)){
+			Ecran.afficher("Veuillez saisir une valeur correct");
+			b1.Porteavion5= Clavier.saisirInt();
+		}
 		Ecran.afficherln("Veuillez saisir la cinquieme colonne de votre Porte avion (il mesure cinq cases)");
 		colonne = Clavier.saisirChar();
+		while(((int)colonne<65)||((int)colonne>74)){
+			Ecran.afficher("Veuillez saisir une valeur correct");
+			colonne = Clavier.saisirChar();
+		}
 		colonne2 = Transform(colonne);
 		b1.Porteavion5=(b1.Porteavion5*10)+colonne2;
-		verite=VerifP(b1);
-		while(verite){
-			Ecran.afficher("Erreur veuillez saisir une ligne");
-			b1.Porteavion4=Clavier.saisirInt();
-			Ecran.afficherln("Veuillez saisir une colonne ");
-			colonne = Clavier.saisirChar();
-			colonne2 = Transform(colonne);
-			b1.Porteavion4=(b1.Porteavion4*10)+colonne2;
-		}
+		
 		return b1;
 	}
 	static int Transform(char C){
